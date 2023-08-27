@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .result {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .result__item {
+        border: 1px solid #000;
+      }
+    </style>
+    <script src="./jquery.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="search-place">
+        <div class="title">
+          <h1>Search your music via itunes</h1>
+        </div>
+        <div class="inputfield">
+          <label for="term">Which singer's song you'd like to search </label>
+          <input type="text" name="" id="term" value="XXXTentacion" />
+        </div>
+        <div class="submit">
+          <button class="submit" id="submit">submit</button>
+        </div>
+      </div>
+      <div class="result" id="result"></div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
