@@ -29,10 +29,7 @@ function getMusic() {
         class: "result__info-place",
         append: [singerNameContent, albumNameContent],
       }),
-      song = $("<audio>", {
-        src: songUrl,
-        controls: true,
-      }),
+      song = cloneAudio(songUrl),
       executerSong = $("<div>", {
         class: "result__executor-song",
         append: song,
@@ -51,24 +48,48 @@ function getMusic() {
     `https://itunes.apple.com/search?term=${getTermFromInput()}&limit=10&entity=musicTrack`
   );
 
-  xhr.onabort = () => {
+  $("#loading").show("fast");
+
+  xhr.onerror = () => {
     alert("error occurred while downloading music try again");
   };
+
   xhr.onload = () => {
+    $("#loading").remove();
     let res = JSON.parse(xhr.response);
     res.results.forEach((item) => {
       let songName = item.artistName,
         artUrl = item.artworkUrl60,
         singerName = item.trackName,
         albumName = item.collectionName,
-        songUrl = item.previewURL;
-      createResponseDOM(songName, artUrl, singerName, albumName, songUrl);
+        songUrl = item.previewUrl;
+      createResponseDOM(
+        `Song name : ${songName}`,
+        artUrl,
+        `Singer name : ${singerName}`,
+        `Album name : ${albumName}`,
+        songUrl
+      );
     });
   };
   xhr.send();
 }
 
-document.getElementById("submit").addEventListener("click", () => {
+$("#term").keydown((ev) => {
+  if (ev.key.toLowerCase() == "enter") {
+    getMusic();
+    $("#term").val("");
+  }
+});
+$("#submit").click(() => {
   getMusic();
   $("#term").val("");
 });
+
+function cloneAudio(srcPath) {
+  const audio = document.getElementById("audio");
+  const audioClone = audio.cloneNode(true);
+  audioClone.src = srcPath;
+  audioClone.style.display = "block";
+  return audioClone;
+}
