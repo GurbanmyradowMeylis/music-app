@@ -6,28 +6,86 @@
     <title>Music</title>
     <link rel="shortcut icon" href="./images/music.png" type="image/x-icon" />
     <script src="./jquery.js"></script>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./dist/output.css" />
   </head>
-  <body>
-    <div class="wrapper">
-      <div class="search-place">
-        <div class="title">
-          <h1>Search your music via itunes</h1>
+  <body class="bg-gradient-to-bl to-bg1 from-bg2">
+    <div id="wrapper">
+      <section
+        id="indexPage"
+        class="grid grid-cols-2 w-full h-screen text-white"
+      >
+        <div id="logo">
+          <h3 class="font-light text-4xl inline-block">Listening is</h3>
+          <img src="./svgs/note.svg" class="inline-block w-10 h-10" />
+          <h1 class="font-semibold text-5xl ml-7 mb-2">Everything</h1>
+          <img src="./svgs/lines.svg" />
+          <div id="advantages">
+            <p>low price</p>
+            <p>high quality</p>
+            <p>over 1 billion musics</p>
+            <p>over 1 million singers</p>
+          </div>
+          <button class="bg-bg rounded-full px-14 py-3 mt-3">
+            Get Started
+          </button>
         </div>
-        <div class="inputfield">
-          <label for="term">Which singer's song you'd like to search </label>
-          <input type="text" name="" id="term" value="XXXTentacion" />
+        <div class="relative">
+          <img
+            src="./images/girl-listening-music.png"
+            class="absolute inline-block z-10 h-[70vh]"
+          />
+          <img src="./svgs/bg-ellipse.svg" />
         </div>
-        <div class="submit">
-          <button class="submit" id="submit">submit</button>
+      </section>
+      <section id="Search-what-you-want" class="w-full h-screen text-white">
+        <div class="search-place">
+          <div class="title">
+            <h1 class="font-light text-4xl">Search what you want</h1>
+          </div>
+          <div class="flex flex-col">
+            <label for="term" class="text-2xl mb-3"
+              >Which singer's song you'd like to search
+            </label>
+            <div>
+              <input
+                type="text"
+                class="bg-bg border border-white rounded-2xl rounded-r-none w-1/4 px-4 pt-2 pb-[13px] outline-none inline-block placeholder:text-white"
+                id="term"
+                placeholder="type here..."
+                autocomplete="off"
+              />
+              <button
+                class="bg-bg border border-white rounded-2xl rounded-l-none -ml-3 px-4 py-2"
+                id="submit"
+              >
+                <img src="./svgs/search.svg" class="inline-block h-1/2" />
+                submit
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="result" id="result"></div>
+        <div class="grid gap-2" id="result">
+          <div class="relative w-full h-full" id="loading">
+            <div
+              class="absolute top-1/2 left-1/2 w-24 h-24 rounded-[50%] border-4 border-stone-800 border-t-transparent animate-spin"
+            ></div>
+          </div>
+        </div>
+      </section>
     </div>
     <audio id="audio" controls style="display: none"></audio>
-    <div class="loading-container" id="loading">
-      <div class="loading-animation"></div>
-    </div>
+
+    <!--  
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: rotate 1s linear infinite;
+      -->
+
     <script src="./js/app.js"></script>
   </body>
 </html>

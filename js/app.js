@@ -56,6 +56,9 @@ function getMusic() {
 
   xhr.onload = () => {
     $("#loading").remove();
+    $("#result").css({
+      "grid-template-columns": "repeat(3, 1fr)",
+    });
     let res = JSON.parse(xhr.response);
     res.results.forEach((item) => {
       let songName = item.artistName,
@@ -76,7 +79,7 @@ function getMusic() {
 }
 
 $("#term").keydown((ev) => {
-  if (ev.key.toLowerCase() == "enter") {
+  if (ev.key == "Enter") {
     getMusic();
     $("#term").val("");
   }
