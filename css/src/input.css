@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .volume-icon {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+  .hidden {
+    display: none;
+  }
+}

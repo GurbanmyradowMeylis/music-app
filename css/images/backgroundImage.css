@@ -1,0 +1,15 @@
+.backgroundImage-1 {
+  background-image: url("../../assets/images/girl-listening-music.png"),
+    url("../../assets/svgs/bgs/bg-ellipse.svg");
+  background-position: 100% 50%, 160% -20%;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.backgroundImage-2 {
+  background-image: url("../../assets/svgs/bgs/bg-circles.svg"),
+    url("../../assets/svgs/bgs/bg-stripes.svg");
+  background-position: 2% 50%, 220% 0%;
+  background-size: auto;
+  background-repeat: no-repeat;
+}

@@ -4,40 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music</title>
-    <link rel="shortcut icon" href="./images/music.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/customAudio/audio.css" />
     <script src="./jquery.js"></script>
-    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./css/dist/output.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/music.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/images/backgroundImage.css" />
+    <link rel="stylesheet" href="./css/customAudio/audio.css" />
   </head>
-  <body class="bg-gradient-to-bl to-bg1 from-bg2">
-    <div id="wrapper">
+  <body>
+    <div id="wrapper" class="bg-fixed bg-gradient-to-bl from-bg2 to-bg1">
       <section
         id="indexPage"
-        class="grid grid-cols-2 w-full h-screen text-white"
+        class="grid grid-cols-2 w-full min-h-screen text-white pt-10 backgroundImage-1"
       >
-        <div id="logo">
-          <h3 class="font-light text-4xl inline-block">Listening is</h3>
-          <img src="./svgs/note.svg" class="inline-block w-10 h-10" />
-          <h1 class="font-semibold text-5xl ml-7 mb-2">Everything</h1>
-          <img src="./svgs/lines.svg" />
-          <div id="advantages">
-            <p>low price</p>
-            <p>high quality</p>
-            <p>over 1 billion musics</p>
-            <p>over 1 million singers</p>
+        <div class="ml-20">
+          <div id="logo" class="relative">
+            <h3 class="font-light text-7xl inline-block italic">
+              Listening is
+            </h3>
+            <div class="relative left-96 -top-10" id="notes">
+              <img
+                src="assets/svgs/notes/music-icon.svg"
+                id="note1"
+                class="inline-block absolute -top-10"
+              />
+              <img
+                src="assets/svgs/notes/music-note-1.svg"
+                id="note2"
+                class="inline-block absolute -left-10 -top-5"
+              />
+              <img
+                src="assets/svgs/notes/music-icon.svg"
+                id="note3"
+                class="inline-block absolute -left-10 top-6"
+              />
+              <img
+                src="assets/svgs/notes/music-note-1.svg"
+                id="note4"
+                class="inline-block absolute top-1 left-1"
+              />
+            </div>
+            <h1 class="font-bold text-7xl ml-36 pt-4 pb-5">Everything</h1>
+            <div class="space-y-3 h-10" id="lines">
+              <div
+                class="relative border-2 border-[#A900FF] w-[560px] rounded-md"
+                id="line1"
+              ></div>
+              <div
+                class="relative border-2 border-[#A900FF] w-[474px] rounded-md"
+                id="line2"
+              ></div>
+              <div
+                class="relative border-2 border-[#A900FF] w-[400px] rounded-md"
+                id="line3"
+              ></div>
+            </div>
+            <div id="advantages" class="relative flex flex-col gap-3 text-3xl">
+              <p class="relative pt-10" id="lowPrice">Low price!</p>
+              <p class="relative" id="highQuality">High quality!</p>
+              <p class="relative" id="oneBillion">Over 1 billion musics!</p>
+              <p class="relative" id="oneMillion">Over 1 million singers!</p>
+            </div>
+            <button
+              id="getStart"
+              class="relative bg-bg rounded-full px-14 py-3 top-10"
+            >
+              Get started
+            </button>
           </div>
-          <button class="bg-bg rounded-full px-14 py-3 mt-3">
-            Get Started
-          </button>
-        </div>
-        <div class="relative">
-          <img
-            src="./images/girl-listening-music.png"
-            class="absolute inline-block z-10 h-[70vh]"
-          />
-          <img src="./svgs/bg-ellipse.svg" />
         </div>
       </section>
-      <section id="Search-what-you-want" class="w-full h-screen text-white">
+
+      <section
+        id="search-what-you-want"
+        class="w-full min-h-screen text-white .backgroundImage-2"
+      >
         <div class="search-place">
           <div class="title">
             <h1 class="font-light text-4xl">Search what you want</h1>
@@ -46,35 +91,91 @@
             <label for="term" class="text-2xl mb-3"
               >Which singer's song you'd like to search
             </label>
-            <div>
+            <div class="flex mb-5">
               <input
                 type="text"
                 class="bg-bg border border-white rounded-2xl rounded-r-none w-1/4 px-4 pt-2 pb-[13px] outline-none inline-block placeholder:text-white"
                 id="term"
                 placeholder="type here..."
                 autocomplete="off"
+                value="miyagi"
               />
               <button
-                class="bg-bg border border-white rounded-2xl rounded-l-none -ml-3 px-4 py-2"
+                class="bg-bg border text-xl border-white border-l-0 rounded-2xl rounded-l-none px-4 py-2"
                 id="submit"
               >
-                <img src="./svgs/search.svg" class="inline-block h-1/2" />
-                submit
+                <img src="./assets/svgs/search.svg" class="inline-block" />
+                search
               </button>
             </div>
           </div>
         </div>
-        <div class="grid gap-2" id="result">
-          <div class="relative w-full h-full" id="loading">
+        <div class="" id="result">
+          <div
+            class="relative w-full h-full"
+            style="display: none"
+            id="loading-parent"
+          >
             <div
+              id="loading"
               class="absolute top-1/2 left-1/2 w-24 h-24 rounded-[50%] border-4 border-stone-800 border-t-transparent animate-spin"
             ></div>
           </div>
+          <div
+            class="grid grid-cols-3 gap-20 p-10 justify-center"
+            id="resultCards"
+          ></div>
+        </div>
+        <div class="flex justify-center pb-5">
+          <button
+            style="display: none"
+            id="more"
+            class="bg-cyan-400 shadow-inner rounded-2xl px-7 py-1"
+          >
+            more
+          </button>
         </div>
       </section>
     </div>
-    <audio id="audio" controls style="display: none"></audio>
+    <div class="bg-transparent mb-6 audio" id="audio" style="display: none">
+      <div class="rounded-lg bg-white/20">
+        <div id="custom-audio" class="rounded-lg p-3 backdrop-blur-sm">
+          <audio id="player" class="player"></audio>
+          <div class="flex gap-2">
+            <button id="play-pause" class="play-pause">
+              <img
+                src="./assets/svgs/customAudio/play.svg"
+                id="play"
+                class="h-7 w-7 play"
+              />
+              <img
+                src="./assets/svgs/customAudio/pause.svg"
+                id="pause"
+                style="display: none"
+                class="h-7 w-7 pause"
+              />
+            </button>
 
-    <script src="./js/app.js"></script>
+            <input type="range" min="0" max="100" value="0" id="duration" />
+            <div id="options" class="flex flex-col gap-1 cursor-pointer">
+              <div
+                id="dots"
+                class="bg-black w-[6px] h-[6px] rounded-md cursor-pointer"
+              ></div>
+              <div
+                id="dots"
+                class="bg-black w-[6px] h-[6px] rounded-md cursor-pointer"
+              ></div>
+              <div
+                id="dots"
+                class="bg-black w-[6px] h-[6px] rounded-md cursor-pointer"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/animation/animation.js" type="module"></script>
+    <script src="./js/app.js" type="module"></script>
   </body>
 </html>

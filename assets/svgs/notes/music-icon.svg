@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36.5" height="36.274" viewBox="0 0 36.5 36.274">
+  <g id="music-icon" transform="translate(-442.794 -108)">
+    <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="5" cy="3" rx="5" ry="3" transform="translate(467 132)" fill="#fff"/>
+    <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="5" cy="3" rx="5" ry="3" transform="translate(445 136)" fill="#fff"/>
+    <path id="music-note-2" d="M14.091,32.577c0,2.042-2.483,3.7-5.546,3.7S3,34.619,3,32.577s2.483-3.7,5.546-3.7S14.091,30.535,14.091,32.577Zm0,0V6.7L36.274,3V28.88m0,0c0,2.042-2.483,3.7-5.546,3.7s-5.546-1.655-5.546-3.7,2.483-3.7,5.546-3.7S36.274,26.838,36.274,28.88ZM14.091,14.091l22.183-3.7" transform="translate(441.294 106.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  </g>
+</svg>
